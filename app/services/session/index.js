@@ -5,6 +5,7 @@ const exampleGroupAsync = require('./tasks/exampleGroupAsync');
 const trecCovidNoSearch = require('./tasks/trecCovidNoSearch');
 const trecCovidSearch = require('./tasks/trecCovidSearch');
 const algorithmicMediationPilot = require('./tasks/algorithmicMediationPilot');
+const queryHistoryWidget = require("./tasks/queryHistory");
 const roleBased = require('./tasks/roleBased');
 const helper = require('./groupHelper');
 
@@ -24,6 +25,8 @@ function task(taskId) {
             return trecCovidSearch;
         case "role-based":
             return roleBased;
+        case "query-history-widget":
+            return queryHistoryWidget;
         default:
             throw {
                 name: "Bad Request",

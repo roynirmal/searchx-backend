@@ -1,6 +1,6 @@
 'use strict';
 
-const TASK_ID = "example-group-sync";
+const TASK_ID = "query-history-widget";
 
 const underscore = require('underscore');
 const mongoose = require('mongoose');
@@ -10,16 +10,11 @@ const utils = require("../../../utils");
 
 ////
 
-const topics = require('./data/topics.json');
-Object.keys(topics).forEach((index) => {
-    topics[index].id = index;
-});
+const topics = require('./data/wildlife_topic.json');
 
 function sampleTopics(n) {
-    let validTopics = underscore.omit(topics, '0');
-    let samples = utils.sample(validTopics, n);
-    samples[1] = topics[0];
-    return samples;
+    //Only one topic here.
+    return {"1": topics['1']}
 }
 
 ////
